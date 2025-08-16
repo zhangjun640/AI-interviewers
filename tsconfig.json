@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "es2020", // 或者 "esnext"、"node16" 等
+    "moduleResolution": "node", // 推荐使用 node 模块解析方式
+    "target": "esnext",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

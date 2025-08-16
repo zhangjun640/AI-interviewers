@@ -1,0 +1,42 @@
+[
+  {
+    "id": "202501",
+    "name": "简洁模板-单栏",
+    "description": "简约而不简单的单栏简历模板。",
+    "folderPath": "templateA",
+    "thumbnail": "preview.jpg",
+    "author": "路见"
+  },
+  {
+    "id": "202502",
+    "name": "简洁模板-单栏",
+    "description": "简约而不简单的简历模板。",
+    "folderPath": "templateB",
+    "thumbnail": "preview.jpg",
+    "author": "见路不走"
+  },
+  {
+    "id": "202503",
+    "name": "简洁模板-双栏",
+    "description": "AI构建的简洁双栏简历模板",
+    "folderPath": "templateC",
+    "thumbnail": "preview.jpg",
+    "author": "见路不走"
+  },
+  {
+    "id": "202504",
+    "name": "简洁模板-单栏",
+    "description": "AI构建的简洁单栏简历模板",
+    "folderPath": "templateD",
+    "thumbnail": "preview.jpg",
+    "author": "见路不走"
+  },
+  {
+    "id": "devlop",
+    "name": "开发版本【开发用】",
+    "description": "供开发者参考开发的模板-建议开发者开发的时候复制模板使用。建议把本模板放到最后",
+    "folderPath": "dev",
+    "thumbnail": "preview.jpg",
+    "author": "路见"
+  }
+]

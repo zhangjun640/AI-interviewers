@@ -1,0 +1,45 @@
+/* 引入字体文件 */
+@font-face {
+  font-family: 'zql';
+  src: url('@/assets/fonts/zql.woff2') format('woff2')
+}
+
+:root {
+  /* 基础颜色 */
+  --bg-color: #fef0f3;
+  --bg-card-color: #ffffff;
+  --text-color: #000000;
+  --text-color2: #ffffff;/* 主色 */
+  --primary-color: #99120d; /* 主题色 */
+  --primary-color-hover: #7A1B19; /* 悬浮，稍深 */
+  --primary-color-active: #661716; /* 激活，更深 */
+  --card-color: white;
+  
+  /* 色阶 */
+  --color-1: #2F0807; /* 最深，标题、文本强调 */
+  --color-2: #4F0D0B; /* 深色背景、边框 */
+  --color-3: #8E201D; /* 主要按钮、链接（主题色） */
+  --color-4: #891814; /* 较亮的按钮、悬浮效果 */
+  --color-5: #8E201D; /* 次级按钮、图标 */
+  --color-6: #8E201D; /* 较亮文本、次级背景 */
+  --color-7: #b64946; /* 最亮，背景高亮、阴影 */
+
+  /* 聊天界面变量 */
+  --chat-bg: #f7f7f9;
+  --chat-user-bubble: var(--color-4);
+  --chat-ai-bubble: var(--bg-card-color);
+  --chat-bubble-shadow: rgba(0, 0, 0, 0.05);
+  --chat-input-bg: var(--bg-card-color);
+  --chat-border: #e8e8e8;
+  --chat-input-text: var(--text-color);
+  --chat-placeholder: #999999;
+}
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'zql';
+  transition: all 0.3s;
+  box-sizing: border-box;
+}

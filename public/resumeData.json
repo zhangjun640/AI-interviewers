@@ -1,0 +1,117 @@
+{
+  "personalInfo": {
+    "name": "coder路见",
+    "phone": "12348888888",
+    "email": "lujian@qq.com",
+    "university": "山东大学",
+    "politicalStatus": "共青团员",
+    "address": "",
+    "website": "",
+    "avatar": "https://imgb14.photophoto.cn/20200302/shandongdaxuexiaohuilogo-36356117_3.jpg",
+    "gender": "男",
+    "age": "21",
+    "major": "软件工程",
+    "applicationPosition": "前端开发工程师"
+  },
+  "education": [
+    {
+      "school": "山东大学",
+      "degree": "本科",
+      "major": "软件工程",
+      "startDate": "2022-09-16",
+      "endDate": "2026-06-08",
+      "id": 11
+    }
+  ],
+  "workExperience": [
+    {
+      "company": "字节跳动",
+      "position": "前端工程师",
+      "startDate": "2024-02-06",
+      "endDate": "2025-02-19",
+      "description": "负责公司核心产品的前端开发，主力使用 Vue 3 和 React，参与组件设计与业务功能实现\n深入优化页面加载**速度与交互性能**，持续提升用户体验，助力产品核心指标提升",
+      "id": 10
+    },
+    {
+      "company": "阿里巴巴",
+      "position": "前端实习生",
+      "startDate": "2025-02-07",
+      "endDate": "至今",
+      "description": "参与电商平台移动端前端开发，针对加载缓慢问题进行性能诊断与优化\n采用 **图片懒加载、按需加载（Code Splitting）、预渲染首屏内容 等优化手段**，将移动端页面加载**速度提升 30%**，显著提升用户访问体验和转化率",
+      "id": 24
+    }
+  ],
+  "skills": [
+    {
+      "skillName": "💻 前端技术：精通 HTML5、CSS3、JavaScript、TypeScript，具备良好的语义化、响应式和跨浏览器开发能力",
+      "id": 25
+    },
+    {
+      "skillName": "🧩 前端框架：熟练掌握 Vue.js、React、Angular，能根据项目需求灵活选型并封装可复用组件",
+      "id": 26
+    },
+    {
+      "skillName": "⚙️ 构建工具：熟悉 Webpack、Vite、Rollup 等现代前端构建工具，能进行性能优化与配置定制",
+      "id": 28
+    },
+    {
+      "skillName": "🖥️ 全栈能力：掌握 Node.js，熟悉 Express、Koa 等后端框架，具备一定的接口开发与中间件编写经验",
+      "id": 29
+    },
+    {
+      "skillName": "🗃️ 数据库技术：了解 MySQL、MongoDB、Redis，能进行基本的数据存储设计与查询操作",
+      "id": 30
+    },
+    {
+      "skillName": "🔧 版本控制：熟练使用 Git，常用 GitHub / GitLab 进行协作开发、分支管理与代码审查",
+      "id": 31
+    }
+  ],
+  "projects": [
+    {
+      "projectName": "企业级管理系统",
+      "role": "前端负责人",
+      "startDate": "2021-02-01",
+      "endDate": "2022-08-12",
+      "description": "1. 使用 Vue 3 + TypeScript + Element Plus 构建企业级 B2B 管理系统前端架构\n2. 优化组件设计与复用，提升模块通用性，**减少约 40% 的代码冗余**\n3. 引入 WebSocket 实现前端与服务端的**实时数据同步，降低接口轮询频率**，显著提升系统响应速度与数据实时性",
+      "id": 13,
+      "briefIntroduction": "参与开发一套面向企业的 B2B 管理系统，涵盖**供应链管理、订单管理等核心模块**，系统支持**多角色权限控制、流程审批、数据报表**等功能，助力企业实现业务数字化与高效管理"
+    },
+    {
+      "projectName": "智能客服系统",
+      "role": "前端开发",
+      "startDate": "2020-08-13",
+      "endDate": "2021-01-06",
+      "description": "1. 使用 React + Redux 构建前端架构，支持 多端适配，确保在 PC 和移动端的稳定性与一致性\n2. 集成 WebRTC 实现**实时音视频客服功能**，优化客户沟通体验，提升服务响应速度与客户满意度",
+      "briefIntroduction": "基于 AI 的智能客服平台，提高客户服务效率。",
+      "id": 33
+    }
+  ],
+  "honors": [
+    {
+      "honorName": "🏅 在 ACM 国际大学生程序设计竞赛（ACM-ICPC） 中，荣获全国二等奖，展现出出色的算法能力与团队协作能力",
+      "date": "2017-02-16",
+      "description": "🏅 在 ACM 国际大学生程序设计竞赛（ACM-ICPC） 中表现优异，荣获全国二等奖，展现出出色的算法能力与团队协作能力",
+      "id": 22
+    },
+    {
+      "honorName": "🏆 获得 字节跳动优秀工程师 称号，凭借卓越的工程实践能力与项目贡献脱颖而出",
+      "date": "2021-02-17",
+      "description": "🏆 获得 字节跳动优秀工程师 称号，凭借卓越的工程实践能力与项目贡献脱颖而出",
+      "id": 23
+    }
+  ],
+  "summary": "5 年前端开发经验，精通 Vue 3、React 和 TypeScript，熟悉前端工程化和性能优化，具有丰富的项目经验，致力于提升用户体验和开发效率。",
+  "resumeSetting": {
+    "themeColor1": "#3653c9",
+    "themeColor2": "#bdcbff",
+    "fontSize": 13,
+    "sectionSpacing": 6,
+    "paragraphSpacing": 2,
+    "currentTemplate": "202501",
+    "padding_top_bottom": 10,
+    "padding_left_right": 15
+  },
+  "currentId": 35,
+  "isFirstVisit": false
+}
