@@ -13,8 +13,16 @@
 
 项目配套的中文面试数据集（已开源）：
 
-* 中文面试数据库：[https://github.com/zhangjun640/Chinese_interview_dataset](https://github.com/zhangjun640/Chinese_interview_dataset)
+### Dataset Links
 
+To meet the needs of various computational resources and application scenarios, I have provided three versions of the dataset with different sizes:
+* 中文面试数据库：[https://github.com/zhangjun640/Chinese_interview_dataset](https://github.com/zhangjun640/Chinese_interview_dataset)
+* **Small(16.1K)**: 
+    * [🤗 zhangjun640/Chinese_interview_small](https://huggingface.co/datasets/zhangjun640/Chinese_interview_small)
+* **Medium(59K)**:
+    * [🤗 zhangjun640/Chinese_interview_medium](https://huggingface.co/datasets/zhangjun640/Chinese_interview_medium)
+* **Large(158K)**:
+    * [🤗 zhangjun640/Chinese_interview_large](https://huggingface.co/datasets/zhangjun640/Chinese_interview_large)
 ---
 
 ## 目录
