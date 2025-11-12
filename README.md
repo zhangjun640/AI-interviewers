@@ -1,118 +1,260 @@
 # AI-interviewers
 
-##  项目介绍
+> 开源简历制作与 AI 模拟面试平台
 
--**AI-interviewers** 是一个开源的简历制作平台，帮助用户轻松创建专业简历，融合 AI 技术，辅助用户润色简历，同时我们通过整合全网的面试而微调的大模型可以帮助大家更好的进行面试模拟！
-我们已经将全网最全的[中文面试数据库](https://github.com/zhangjun640/Chinese_interview_dataset)开源！
-- **技术栈**：Vue 3 + Vite + TypeScript + Ant Design Vue
+**AI-interviewers** 是一个基于 Vue 3 + Vite + TypeScript + Ant Design Vue 的开源简历平台。我们帮助用户：
 
-##  项目预览
+* 快速构建专业简历并导出为 PDF；
+* 使用 AI 自动润色与深度挖掘简历内容；
+* 利用微调的大模型进行面试模拟；
+* 提供可拓展的模板市场与可视化拖拽设计。
 
-- **基础页面**
+项目配套的中文面试数据集（已开源）：
 
-![0](https://github.com/zhangjun640/AI-interviewers/blob/main/0.png)
+* 中文面试数据库：[https://github.com/zhangjun640/Chinese_interview_dataset](https://github.com/zhangjun640/Chinese_interview_dataset)
 
-- **导入json格式的简历**
+---
 
-![1](https://github.com/zhangjun640/AI-interviewers/blob/main/1.png)
+## 目录
 
-- **导出简历数据**
+1. [项目预览](#项目预览)
+2. [技术栈](#技术栈)
+3. [功能清单](#功能清单)
+4. [快速开始（本地开发）](#快速开始本地开发)
+5. [Cloudflare Worker 反向代理（示例）](#cloudflare-worker-反向代理示例)
+6. [其它反代方式](#其它反代方式)
+7. [部署建议](#部署建议)
+8. [模板开发指南](#模板开发指南)
+9. [常见问题](#常见问题)
+10. [贡献与许可](#贡献与许可)
 
-![2](https://github.com/zhangjun640/AI-interviewers/blob/main/2.png)
+---
 
-- **模版市场**
+## 项目预览
 
-![3](https://github.com/zhangjun640/AI-interviewers/blob/main/3.png)
+> 下列图片来自仓库（在 README 显示时可渲染为画廊）。
 
-- **简历外观自定义**
+* 基础页面预览
 
-![4](https://github.com/zhangjun640/AI-interviewers/blob/main/4.png)
+![基础页面](https://github.com/zhangjun640/AI-interviewers/blob/main/0.png)
 
-- **导出简历pdf文件**
+* 导入 JSON 简历
 
-![5](https://github.com/zhangjun640/AI-interviewers/blob/main/5.png)
+![导入 JSON](https://github.com/zhangjun640/AI-interviewers/blob/main/1.png)
 
+* 导出简历数据
 
-- **AI助写功能**
+![导出数据](https://github.com/zhangjun640/AI-interviewers/blob/main/2.png)
 
-![6](https://github.com/zhangjun640/AI-interviewers/blob/main/6.png)
+* 模板市场与样式自定义
 
-- **AI模拟面试**
+![模板市场](https://github.com/zhangjun640/AI-interviewers/blob/main/3.png)
 
-![7](https://github.com/zhangjun640/AI-interviewers/blob/main/7.png)
+* 简历样式自定义面板
 
+![自定义外观](https://github.com/zhangjun640/AI-interviewers/blob/main/4.png)
 
-## 🚀 快速开始
+* 导出 PDF
 
-### 1️⃣ 运行环境要求
+![导出 PDF](https://github.com/zhangjun640/AI-interviewers/blob/main/5.png)
 
-- **Node.js**：18+
+* AI 助写与模拟面试
 
-### 2️⃣ 克隆并安装依赖
+![AI 助写](https://github.com/zhangjun640/AI-interviewers/blob/main/6.png)
+
+![AI 模拟面试](https://github.com/zhangjun640/AI-interviewers/blob/main/7.png)
+
+---
+
+## 技术栈
+
+* 框架：Vue 3 + Vite
+* 语言：TypeScript
+* UI：Ant Design Vue
+* 打包/构建：Vite
+* AI 接口：兼容 OpenAI Chat Completions API（可替换为阿里云、DeepSeek 等）
+
+---
+
+## 功能清单
+
+**核心功能**
+
+* ✅ 可视化简历编辑（实时预览与缩放）
+* ✅ 多套可热插拔模板
+* ✅ 导入/导出 JSON 数据
+* ✅ 导出 PDF（支持样式配置）
+* ✅ AI 助写（摘要、润色、扩展项目经历）
+* ✅ AI 模拟面试（基于简历的逐条回合式问答）
+* ✅ 模板市场展示与作者信息
+* ✅ 漂亮的暗/明模式支持
+
+**细节功能**
+
+* 模板主题色切换、字体与间距配置
+* 预填充示例数据 / 一键生成虚假数据查看效果
+* 支持右侧同步预览与拖动缩放
+* 支持前端持久化（LocalStorage / IndexedDB）
+
+---
+
+## 快速开始（本地开发）
+
+> 要求：Node.js >= 18
+
+### 克隆仓库
 
 ```bash
-git clone [https://github.com/weidong-repo/AIResume.git](https://github.com/zhangjun640/AI-interviewers)
+git clone https://github.com/zhangjun640/AI-interviewers.git
 cd AI-interviewers
-npm install
 ```
 
-### 3️⃣ 运行项目
+### 安装依赖
+
+```bash
+npm install
+# or
+pnpm install
+```
+
+### 启动开发服务器
 
 ```bash
 npm run dev
 ```
 
-
-## 使用 Cloudflare Worker 进行 API 反向代理
-
-本项目可使用 **Cloudflare Worker** 进行反向代理，以解决跨域问题。例如，针对 **阿里云百炼 API**：
-
-1. 将 `workers.js` 上传至 Cloudflare Worker
-2. 配置密钥 `API_URL` 指向大模型 API 地址（本项目接口适配 OpenAI 兼容 API，如阿里云、DeepSeek 等）
-
-示例（阿里云 API 地址）：
+### 构建生产包
 
 ```bash
-https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
+npm run build
+# 预览构建产物
+npm run preview
 ```
 
- 兼容 OpenAI API 的大模型均可无缝切换！
+---
 
-**只需更改 `API_URL` 和 API Key，即可快速替换大模型！**
+## Cloudflare Worker 反向代理（示例）
 
-------
+> 推荐使用 Cloudflare Worker 或任意能解决跨域的反代方案，将后端大模型 API 隐藏在服务端，避免在浏览器暴露 API Key。
+
+### 1）示例 `workers.js`（最小可用）
+
+```js
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+const API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+const API_KEY = "替换为你的_API_KEY"
+
+async function handleRequest(req) {
+  // 仅允许 POST 转发（可按需增加鉴权）
+  if (req.method !== 'POST') return new Response('Only POST', { status: 405 })
+
+  const body = await req.text()
+
+  const upstreamResp = await fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `ApiKey ${API_KEY}` // 根据上游 API 要求调整
+    },
+    body
+  })
+
+  const respText = await upstreamResp.text()
+  return new Response(respText, {
+    status: upstreamResp.status,
+    headers: { 'Content-Type': 'application/json' }
+  })
+}
+```
+
+> 注意：将 `API_KEY` 写在 Worker 的 Secrets（环境变量）中更安全，不要硬编码在源代码里。
+
+### 2）Worker 路由示例
+
+在 Cloudflare 控制台中设置路由，例如：
+
+```
+https://api.yourdomain.com/*
+```
+
+并将 `API_URL` 指向你的兼容 OpenAI 的模型地址（例如阿里云、DeepSeek 等）。
+
+---
 
 ## 其它反向代理方式
 
-如果不想使用 Cloudflare Worker，也可以使用其他工具进行反代。**核心要求：只需解决跨域问题，即可流畅调用大模型 API！**
+如果不想使用 Cloudflare Worker，可选方案：
 
-------
+* Nginx 反向代理（在你的服务器上做 /api 转发并设置 CORS）
+* Vercel Serverless / Netlify Functions
+* 简单的 Node.js 中转（express / fastify）
 
-##  已完成功能
+### Nginx 简化示例
 
-主要功能：
+```nginx
+location /api/chat/ {
+  proxy_pass https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions;
+  proxy_set_header Authorization "ApiKey $API_KEY";
+  proxy_set_header Content-Type "application/json";
+}
+```
 
-- ✅ 简历编辑，数据前端持久化
-- ✅ 简历导出为 PDF
-- ✅ 简历多模板，支持热插拔切换
-- ✅ 多套简历模板，支持前端开发者共创
-- ✅ 简历撰写的时候，AI可以进行润色
-- ✅ AI简历深挖 利用ai 基于单个项目或者经历的长对话对简历进行深度优化
-- ✅ AI模拟面试 针对单一项目或者经历对用户进行面试拷打
+---
 
-细节功能：
+## 模板开发指南（简要）
 
-- ✅ 模板主题色切换
-- ✅ 简历高度自定义，如段落间距、区块间距、字体大小、页边距等
-- ✅ 网站整体明/暗色切换
-- ✅ 右侧实时预览，自动同步用户编辑内容
-- ✅ 预览界面可拖动缩放简历
-- ✅ 导出 / 导入简历数据
-- ✅ 清空数据
-- ✅ 预填充示例数据
-- ✅ 一键填充虚假数据（快速查看简历效果）
-- ✅ 模板市场展示
-- ✅ 模板信息展示作者的昵称以及网站
-- ✅ 模板信息展示作者的昵称以及网站
-- ✅ AI 面试官（大模型读取简历）
-- ✅ 可视化简历设计（支持非前端开发者用户拖拽设计简历）
+1. 在 `src/templates` 下创建新模板文件夹
+2. 提供模板元信息 `manifest.json`（名称、作者、缩略图、占位字段）
+3. 实现模板渲染组件（Vue）并保证接收统一的简历 JSON 数据结构
+4. 在模板市场配置注册你的模板（可通过 PR 提交）
+
+---
+
+## 部署建议
+
+* **静态托管**：Netlify / Vercel / GitHub Pages（若仅前端）
+* **带 Server 的部署**：若使用中转 API（反代），可以部署 Worker / Vercel Serverless / 自建 Nginx + Node
+* **SSL / HTTPS**：务必为前端和反代域名启用 HTTPS
+* **API Key 安全**：不要将私钥写入前端仓库；使用 Server/Worker 的环境变量或 secret 管理。
+
+---
+
+## 常见问题
+
+**Q：API Key 会暴露吗？**
+A：如果直接在前端调用第三方模型 API（浏览器端），API Key 会暴露。请使用 Cloudflare Worker、Netlify Functions、Vercel Serverless 等中转服务隐藏 Key。
+
+**Q：如何添加新模板？**
+A：按上文“模板开发指南”创建模板并提交 PR。
+
+**Q：AI 功能如何定制？**
+A：后端中转处可替换为任意兼容 OpenAI 的 API。同时可以对 prompt 逻辑进行本地化微调，或在后端做更多的安全与计费控制。
+
+---
+
+## 贡献 & 社区
+
+欢迎贡献：功能、模板、修复 bug、优化文档等。
+
+1. Fork 仓库
+2. 创建 feature 分支
+3. 提交 PR 并在 PR 描述中说明变更
+
+---
+
+## 许可证
+
+本项目采用 MIT 许可证 — 详见仓库中的 `LICENSE` 文件。
+
+---
+
+## 联系方式
+
+如需进一步支持或合作，请在仓库 issue 区提问或联系项目作者。
+
+---
+
+> 祝你招聘顺利，简历敲门砖满载而归 🎯
