@@ -8,6 +8,7 @@
 * 使用 AI 自动润色与深度挖掘简历内容；
 * 利用微调的大模型进行面试模拟；
 * 提供可拓展的模板市场与可视化拖拽设计。
+* 更详细的使用指导：[用户使用手册](https://github.com/zhangjun640/AI-interviewers/blob/main/User_Manual.pdf)
 
 项目配套的中文面试数据集（已开源）：
 
