@@ -2,31 +2,45 @@
 
 ##  项目介绍
 
-**AI-interviewers** 是一个开源的简历制作平台，帮助用户轻松创建专业简历，融合 AI 技术，辅助用户润色简历，同时我们通过整合全网的面试而微调的大模型可以帮助大家更好的进行面试模拟！
+-**AI-interviewers** 是一个开源的简历制作平台，帮助用户轻松创建专业简历，融合 AI 技术，辅助用户润色简历，同时我们通过整合全网的面试而微调的大模型可以帮助大家更好的进行面试模拟！
 我们已经将全网最全的[中文面试数据库](https://github.com/zhangjun640/Chinese_interview_dataset)开源！
 - **技术栈**：Vue 3 + Vite + TypeScript + Ant Design Vue
 
 ##  项目预览
 
-编辑简历
+- **基础页面**
 
 ![0](https://github.com/zhangjun640/AI-interviewers/blob/main/0.png)
 
-简历市场
+- **导入json格式的简历**
 
-![image-20250222224844722](https://img.fish9.cn/blog-img/2023/image-20250222224844722.png)
+![1](https://github.com/zhangjun640/AI-interviewers/blob/main/1.png)
 
-AI模拟拷打：
+- **导出简历数据**
 
-![img](https://img.fish9.cn/blog-img/2023/image-20250226124049111.png)
+![2](https://github.com/zhangjun640/AI-interviewers/blob/main/2.png)
 
-AI润色
+- **模版市场**
 
-![image-20250222224945177](https://img.fish9.cn/blog-img/2023/image-20250222224945177.png)
+![3](https://github.com/zhangjun640/AI-interviewers/blob/main/3.png)
 
-简历高度自定义配置”
+- **简历外观自定义**
 
-![image-20250310231433143](https://img.fish9.cn/blog-img/2023/image-20250310231433143.png)
+![4](https://github.com/zhangjun640/AI-interviewers/blob/main/4.png)
+
+- **导出简历pdf文件**
+
+![5](https://github.com/zhangjun640/AI-interviewers/blob/main/5.png)
+
+
+- **AI助写功能**
+
+![6](https://github.com/zhangjun640/AI-interviewers/blob/main/6.png)
+
+- **AI模拟面试**
+
+![7](https://github.com/zhangjun640/AI-interviewers/blob/main/7.png)
+
 
 ## 🚀 快速开始
 
