@@ -17,6 +17,8 @@
 
 To meet the needs of various computational resources and application scenarios, I have provided three versions of the dataset with different sizes:
 * 中文面试数据库：[https://github.com/zhangjun640/Chinese_interview_dataset](https://github.com/zhangjun640/Chinese_interview_dataset)
+
+或者是直接进入Huggingfaces数据库：
 * **Small(16.1K)**: 
     * [🤗 zhangjun640/Chinese_interview_small](https://huggingface.co/datasets/zhangjun640/Chinese_interview_small)
 * **Medium(59K)**:
