@@ -3,7 +3,7 @@
 ##  项目介绍
 
 **AI-interviewers** 是一个开源的简历制作平台，帮助用户轻松创建专业简历，融合 AI 技术，辅助用户润色简历，同时我们通过整合全网的面试而微调的大模型可以帮助大家更好的进行面试模拟！
-我们已经将全网最全的[中文面试数据库][https://resume.404.pub/](https://github.com/zhangjun640/Chinese_interview_dataset)开源！
+我们已经将全网最全的[中文面试数据库](https://github.com/zhangjun640/Chinese_interview_dataset)开源！
 - **技术栈**：Vue 3 + Vite + TypeScript + Ant Design Vue
 
 ##  项目预览
