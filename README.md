@@ -1,156 +1,165 @@
 # AI-interviewers
 
-> Open-source Resume Builder & AI Interview Simulation Platform
+> 开源简历制作与 AI 模拟面试平台
 
-**AI-interviewers** is an open-source resume creation platform built with Vue 3, Vite, TypeScript, and Ant Design Vue. It helps users:
+**AI-interviewers** 是一个基于 Vue 3 + Vite + TypeScript + Ant Design Vue 的开源简历平台。我们帮助用户：
 
-* Quickly build professional resumes and export them as PDF files;
-* Use AI to polish and enhance resume content;
-* Simulate interviews using a fine-tuned large language model;
-* Access an extensible template marketplace and drag-and-drop visual resume designer.
+* 快速构建专业简历并导出为 PDF；
+* 使用 AI 自动润色与深度挖掘简历内容；
+* 利用微调的大模型进行面试模拟；
+* 提供可拓展的模板市场与可视化拖拽设计。
+* 更详细的使用指导：[用户使用手册](https://github.com/zhangjun640/AI-interviewers/blob/main/User_Manual.pdf)
+* You can find the English version of the guide [here](https://github.com/zhangjun640/AI-interviewers/blob/main/English_readme.md)
 
-**Documentation & Guides:**
-* 🇨🇳 **Chinese User Manual / 中文使用手册**: [User_Manual.pdf](https://github.com/zhangjun640/AI-interviewers/blob/main/User_Manual.pdf)
-* 🇨🇳 **Chinese README / 中文介绍**: [README_zh.md](./README_zh.md)
+项目配套的中文面试数据集（已开源）：
+
+### Dataset Links
+
+* 中文面试数据库：[https://github.com/zhangjun640/Chinese_interview_dataset](https://github.com/zhangjun640/Chinese_interview_dataset)
+
+或者是直接进入Huggingfaces数据库：
+* **Small(16.1K)**: 
+    * [🤗 zhangjun640/Chinese_interview_small](https://huggingface.co/datasets/zhangjun640/Chinese_interview_small)
+* **Medium(59K)**:
+    * [🤗 zhangjun640/Chinese_interview_medium](https://huggingface.co/datasets/zhangjun640/Chinese_interview_medium)
+* **Large(158K)**:
+    * [🤗 zhangjun640/Chinese_interview_large](https://huggingface.co/datasets/zhangjun640/Chinese_interview_large)
+---
+
+## 目录
+
+1. [项目预览](#项目预览)
+2. [技术栈](#技术栈)
+3. [功能清单](#功能清单)
+4. [快速开始（本地开发）](#快速开始本地开发)
+5. [Cloudflare Worker 反向代理（示例）](#cloudflare-worker-反向代理示例)
+6. [其它反代方式](#其它反代方式)
+7. [部署建议](#部署建议)
+8. [模板开发指南](#模板开发指南)
+9. [常见问题](#常见问题)
+10. [贡献与许可](#贡献与许可)
 
 ---
 
-### Dataset Links (Chinese Interview Data)
+## 项目预览
 
-We provide an open-source Chinese Interview Dataset used in this project:
+> 下列图片来自仓库（在 README 显示时可渲染为画廊）。
 
-* **GitHub Repo**: [https://github.com/zhangjun640/Chinese_interview_dataset](https://github.com/zhangjun640/Chinese_interview_dataset)
+* 基础页面预览
 
-Or access directly via Hugging Face:
-* **Small(16.1K)**: [🤗 zhangjun640/Chinese_interview_small](https://huggingface.co/datasets/zhangjun640/Chinese_interview_small)
-* **Medium(59K)**: [🤗 zhangjun640/Chinese_interview_medium](https://huggingface.co/datasets/zhangjun640/Chinese_interview_medium)
-* **Large(158K)**: [🤗 zhangjun640/Chinese_interview_large](https://huggingface.co/datasets/zhangjun640/Chinese_interview_large)
+![基础页面](https://github.com/zhangjun640/AI-interviewers/blob/main/0.png)
 
----
+* 导入 JSON 简历
 
-## Table of Contents
+![导入 JSON](https://github.com/zhangjun640/AI-interviewers/blob/main/1.png)
 
-1. [Project Preview](#project-preview)
-2. [Tech Stack](#tech-stack)
-3. [Feature Overview](#feature-overview)
-4. [Quick Start (Local Development)](#quick-start-local-development)
-5. [Cloudflare Worker Reverse Proxy (Example)](#cloudflare-worker-reverse-proxy-example)
-6. [Other Reverse Proxy Options](#other-reverse-proxy-options)
-7. [Deployment Recommendations](#deployment-recommendations)
-8. [Template Development Guide](#template-development-guide)
-9. [FAQ](#faq)
-10. [Contribution & License](#contribution--license)
+* 导出简历数据
 
----
+![导出数据](https://github.com/zhangjun640/AI-interviewers/blob/main/2.png)
 
-## Project Preview
+* 模板市场与样式自定义
 
-> The following screenshots are from the repository.
+![模板市场](https://github.com/zhangjun640/AI-interviewers/blob/main/3.png)
 
-* Main Interface
+* 简历样式自定义面板
 
-![Main Interface](https://github.com/zhangjun640/AI-interviewers/blob/main/0.png)
+![自定义外观](https://github.com/zhangjun640/AI-interviewers/blob/main/4.png)
 
-* Import JSON Resume
+* 导出 PDF
 
-![Import JSON](https://github.com/zhangjun640/AI-interviewers/blob/main/1.png)
+![导出 PDF](https://github.com/zhangjun640/AI-interviewers/blob/main/5.png)
 
-* Export Resume Data
+* AI 助写与模拟面试
 
-![Export Data](https://github.com/zhangjun640/AI-interviewers/blob/main/2.png)
+![AI 助写](https://github.com/zhangjun640/AI-interviewers/blob/main/6.png)
 
-* Template Marketplace & Customization
-
-![Template Marketplace](https://github.com/zhangjun640/AI-interviewers/blob/main/3.png)
-
-* Resume Appearance Customization
-
-![Customization](https://github.com/zhangjun640/AI-interviewers/blob/main/4.png)
-
-* Export PDF
-
-![Export PDF](https://github.com/zhangjun640/AI-interviewers/blob/main/5.png)
-
-* AI Assistance & Interview Simulation
-
-![AI Writing Assistant](https://github.com/zhangjun640/AI-interviewers/blob/main/6.png)
-
-![AI Interview Simulation](https://github.com/zhangjun640/AI-interviewers/blob/main/7.png)
+![AI 模拟面试](https://github.com/zhangjun640/AI-interviewers/blob/main/7.png)
 
 ---
 
-## Tech Stack
+## 技术栈
 
-* **Framework**: Vue 3 + Vite
-* **Language**: TypeScript
-* **UI**: Ant Design Vue
-* **Build Tool**: Vite
-* **AI API**: Compatible with OpenAI Chat Completions API (supports Aliyun DashScope, DeepSeek, etc.)
-
----
-
-## Feature Overview
-
-**Core Features**
-
-* ✅ Visual resume editor with real-time preview and scaling
-* ✅ Multiple plug-and-play resume templates
-* ✅ Import / export JSON data
-* ✅ Export PDF with customizable styles
-* ✅ AI Writing Assistant (for resume polishing and expansion)
-* ✅ AI Interview Simulation (interactive Q&A based on resume content)
-* ✅ Template marketplace with author info display
-* ✅ Light/Dark theme support
-
-**Detail Features**
-
-* Customizable theme color, fonts, and spacing
-* Pre-filled sample data & fake data generation for demo
-* Real-time synchronized preview with drag-to-zoom
-* Frontend persistence via LocalStorage / IndexedDB
+* 框架：Vue 3 + Vite
+* 语言：TypeScript
+* UI：Ant Design Vue
+* 打包/构建：Vite
+* AI 接口：兼容 OpenAI Chat Completions API（可替换为阿里云、DeepSeek 等）
 
 ---
 
-## Quick Start (Local Development)
+## 功能清单
 
-> Requirements: Node.js >= 18
+**核心功能**
 
-### Clone the repository
+* ✅ 可视化简历编辑（实时预览与缩放）
+* ✅ 多套可热插拔模板
+* ✅ 导入/导出 JSON 数据
+* ✅ 导出 PDF（支持样式配置）
+* ✅ AI 助写（摘要、润色、扩展项目经历）
+* ✅ AI 模拟面试（基于简历的逐条回合式问答）
+* ✅ 模板市场展示与作者信息
+* ✅ 漂亮的暗/明模式支持
+
+**细节功能**
+
+* 模板主题色切换、字体与间距配置
+* 预填充示例数据 / 一键生成虚假数据查看效果
+* 支持右侧同步预览与拖动缩放
+* 支持前端持久化（LocalStorage / IndexedDB）
+
+---
+
+## 快速开始（本地开发）
+
+> 要求：Node.js >= 18
+
+### 克隆仓库
 
 ```bash
-git clone [https://github.com/zhangjun640/AI-interviewers.git](https://github.com/zhangjun640/AI-interviewers.git)
+git clone https://github.com/zhangjun640/AI-interviewers.git
 cd AI-interviewers
-Install dependencies
-Bash
+```
 
+### 安装依赖
+
+```bash
 npm install
 # or
 pnpm install
-Run development server
-Bash
+```
 
+### 启动开发服务器
+
+```bash
 npm run dev
-Build for production
-Bash
+```
 
+### 构建生产包
+
+```bash
 npm run build
-# Preview build output
+# 预览构建产物
 npm run preview
-Cloudflare Worker Reverse Proxy (Example)
-Recommended: Use Cloudflare Worker or any reverse proxy to handle CORS and protect your API key from exposure in the browser.
+```
 
-1) Minimal workers.js Example
-JavaScript
+---
 
+## Cloudflare Worker 反向代理（示例）
+
+> 推荐使用 Cloudflare Worker 或任意能解决跨域的反代方案，将后端大模型 API 隐藏在服务端，避免在浏览器暴露 API Key。
+
+### 1）示例 `workers.js`（最小可用）
+
+```js
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 
-const API_URL = "[https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions](https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions)"
-const API_KEY = "REPLACE_WITH_YOUR_API_KEY"
+const API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+const API_KEY = "替换为你的_API_KEY"
 
 async function handleRequest(req) {
-  // Only allow POST requests
+  // 仅允许 POST 转发（可按需增加鉴权）
   if (req.method !== 'POST') return new Response('Only POST', { status: 405 })
 
   const body = await req.text()
@@ -159,7 +168,7 @@ async function handleRequest(req) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `ApiKey ${API_KEY}` // adjust prefix per provider (e.g., Bearer or ApiKey)
+      'Authorization': `ApiKey ${API_KEY}` // 根据上游 API 要求调整
     },
     body
   })
@@ -170,70 +179,93 @@ async function handleRequest(req) {
     headers: { 'Content-Type': 'application/json' }
   })
 }
-⚠️ Security Note: Always store API_KEY in Worker Secrets (Environment Variables) — never hard-code it in the source code.
+```
 
-2) Worker Routing Example
-In the Cloudflare dashboard, configure routing such as:
+> 注意：将 `API_KEY` 写在 Worker 的 Secrets（环境变量）中更安全，不要硬编码在源代码里。
 
-[https://api.yourdomain.com/](https://api.yourdomain.com/)*
-Set API_URL to any OpenAI-compatible endpoint (e.g., Aliyun DashScope, DeepSeek, etc.).
+### 2）Worker 路由示例
 
-Other Reverse Proxy Options
-If Cloudflare Worker isn’t used, alternative options include:
+在 Cloudflare 控制台中设置路由，例如：
 
-Nginx reverse proxy (handle /api forwarding and CORS)
+```
+https://api.yourdomain.com/*
+```
 
-Vercel Serverless / Netlify Functions
+并将 `API_URL` 指向你的兼容 OpenAI 的模型地址（例如阿里云、DeepSeek 等）。
 
-Simple Node.js middleware (express / fastify)
+---
 
-Nginx Example
-Nginx
+## 其它反向代理方式
 
+如果不想使用 Cloudflare Worker，可选方案：
+
+* Nginx 反向代理（在你的服务器上做 /api 转发并设置 CORS）
+* Vercel Serverless / Netlify Functions
+* 简单的 Node.js 中转（express / fastify）
+
+### Nginx 简化示例
+
+```nginx
 location /api/chat/ {
-  proxy_pass [https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions](https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions);
+  proxy_pass https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions;
   proxy_set_header Authorization "ApiKey $API_KEY";
   proxy_set_header Content-Type "application/json";
 }
-Template Development Guide (Brief)
-Create a new folder under src/templates.
+```
 
-Add manifest.json (template name, author, preview image, placeholder fields).
+---
 
-Implement the Vue render component (must accept standard resume JSON data).
+## 模板开发指南（简要）
 
-Register the template in the marketplace (via PR submission).
+1. 在 `src/templates` 下创建新模板文件夹
+2. 提供模板元信息 `manifest.json`（名称、作者、缩略图、占位字段）
+3. 实现模板渲染组件（Vue）并保证接收统一的简历 JSON 数据结构
+4. 在模板市场配置注册你的模板（可通过 PR 提交）
 
-Deployment Recommendations
-Static Hosting: Netlify / Vercel / GitHub Pages (frontend-only).
+---
 
-With API Proxy: Use Worker / Vercel Serverless / self-hosted Node + Nginx.
+## 部署建议
 
-SSL / HTTPS: Always enable HTTPS for both the frontend and proxy domains.
+* **静态托管**：Netlify / Vercel / GitHub Pages（若仅前端）
+* **带 Server 的部署**：若使用中转 API（反代），可以部署 Worker / Vercel Serverless / 自建 Nginx + Node
+* **SSL / HTTPS**：务必为前端和反代域名启用 HTTPS
+* **API Key 安全**：不要将私钥写入前端仓库；使用 Server/Worker 的环境变量或 secret 管理。
 
-API Key Security: Store keys in secrets/env variables, never commit them to the repo.
+---
 
-FAQ
-Q: Will my API key be exposed? A: If you call the API directly from the frontend browser, yes. Use a proxy (Cloudflare Worker, Vercel, Netlify, etc.) to keep it hidden.
+## 常见问题
 
-Q: How do I add a new template? A: Follow the Template Development Guide above and submit a pull request.
+**Q：API Key 会暴露吗？**
+A：如果直接在前端调用第三方模型 API（浏览器端），API Key 会暴露。请使用 Cloudflare Worker、Netlify Functions、Vercel Serverless 等中转服务隐藏 Key。
 
-Q: How can I customize AI features? A: Replace the backend proxy URL with any OpenAI-compatible API. You can also modify prompts in the code or apply fine-tuning on your own server.
+**Q：如何添加新模板？**
+A：按上文“模板开发指南”创建模板并提交 PR。
 
-Contribution & License
-Contribution
-We welcome contributions — new features, templates, documentation improvements, or bug fixes.
+**Q：AI 功能如何定制？**
+A：后端中转处可替换为任意兼容 OpenAI 的 API。同时可以对 prompt 逻辑进行本地化微调，或在后端做更多的安全与计费控制。
 
-Fork the repository.
+---
 
-Create a feature branch.
+## 贡献 & 社区
 
-Submit a pull request (please describe your changes clearly).
+欢迎贡献：功能、模板、修复 bug、优化文档等。
 
-License
-This project is licensed under the MIT License — see LICENSE for details.
+1. Fork 仓库
+2. 创建 feature 分支
+3. 提交 PR 并在 PR 描述中说明变更
 
-Contact
-For issues, suggestions, or collaboration inquiries, please open an issue on GitHub or contact the maintainer.
+---
 
-Wishing you success — may your resume open every door 🚀
+## 许可证
+
+本项目采用 MIT 许可证 — 详见仓库中的 `LICENSE` 文件。
+
+---
+
+## 联系方式
+
+如需进一步支持或合作，请在仓库 issue 区提问或联系项目作者。
+
+---
+
+> 祝你招聘顺利，简历敲门砖满载而归 🎯
